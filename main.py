@@ -7,7 +7,6 @@ app = Flask(__name__)
 # Index 
 @app.route('/')
 def index():
-	x = int('s')
 	return render_template('index.html')
 
 @app.route('/map')
