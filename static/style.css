@@ -1,0 +1,43 @@
+#centered {
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+}
+h1 {
+  font-size: 60px;
+}
+
+body {
+	text-align: center;
+
+}
+
+.form-group {
+	width: 20rem;
+	margin: auto;
+	padding-top: .5rem;
+}
+
+h1 {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.open-button {
+	border-width: 0;
+}
+
+.cancel {
+	color: red;
+	font-size: 10px;
+	border: 1px solid red;
+}
+
+
+padding {
+	size: 10px;
+	padding: 1rem;
+}

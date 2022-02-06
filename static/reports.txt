@@ -1,0 +1,18 @@
+Object: [37.87898090042498, -122.53321396546424, '7-11', 4.5, 14, 1]
+
+Comments: Bad loooooo!
+---------------
+
+
+Object: [37.89511218107826, -122.53320238136678, "Grilly's", 7.5, 2, 7, '']
+
+Comments: This isn't a real bathroom. They don't let customers in. 
+---------------
+
+
+Object: [37.89511218107826, -122.53320238136678, "Grilly's", 7.5, 2, 7, '']
+
+Comments: Pooop
+---------------
+
+
