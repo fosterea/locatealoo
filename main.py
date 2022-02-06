@@ -1,4 +1,5 @@
 from flask import Flask, redirect, render_template, request
+from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 import json
 
 app = Flask(__name__)
@@ -6,11 +7,12 @@ app = Flask(__name__)
 # Index 
 @app.route('/')
 def index():
-  return render_template('index.html')
+	x = int('s')
+	return render_template('index.html')
 
 @app.route('/map')
 def map():
-  return render_template('map.html')
+  	return render_template('map.html')
 
 # Add a new loo
 @app.route('/addloo', methods=['GET', 'POST'])
@@ -87,5 +89,16 @@ def save_json(obj):
 	with open('loos.json', "w") as f:
 		json.dump(obj, f)
 
+def errorhandler(e):
+    """Handle error"""
+    if not isinstance(e, HTTPException):
+        e = InternalServerError()
+    return (e.name, e.code)
+
+
+# Listen for errors
+for code in default_exceptions:
+    app.errorhandler(code)(errorhandler)
+
 if __name__ == '__main__':
-    app.run()
+	app.run(debug='true')
