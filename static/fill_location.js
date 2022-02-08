@@ -15,13 +15,24 @@ function update_coords(lat, long) {
 	document.getElementById('longitude').value = long;
 }
 
-fetch("https://api.mapbox.com/geocoding/v5/mapbox.places/starbucks.json?type=poi&proximity=-122.54,37.9&access_token=pk.eyJ1IjoidGFtY3NtbCIsImEiOiJja3phaGRjc3gyMTJjMnZwNHl0eDU1NGN5In0.HaXGQzds4czES1TZdYpN8Q")
-.then(function (response) {
-  console.log("hi");
-  return response.json();
-}).then(function (loo) {
-  console.log(loo);
-});
+var requestOptions = {
+  method: 'GET',
+};
 
-//https://docs.mapbox.com/api/search/geocoding/#geocoding-response-object
-//https://docs.mapbox.com/api/search/geocoding/#point-of-interest-category-coverage
+function addressLocation(event) {
+  event.preventDefault();
+  input_obj = document.getElementById('address')
+  address = input_obj.value;
+  fetch("https://api.geoapify.com/v1/geocode/search?text=" + address + "&apiKey=7197a1567686477e892187781e7a85b4", requestOptions)
+  .then(response => response.json())
+  .then(function (result) {
+    first_result = result.features[0].properties
+    full_address = first_result.address_line1 + ", " + first_result.address_line2;
+    input_obj.value = full_address;
+    lat = first_result.lat;
+    long = first_result.lon;
+    update_coords(lat, long);
+  })
+  .catch(error => console.log('error', error));
+}
+

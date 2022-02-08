@@ -22,7 +22,7 @@ def add_loo():
 		arr = [float(form.get("latitude")), float(form.get("longitude")), form.get("name"), int(form.get("rating")), 1]
 		# Load loos, append loo, save loo
 		loos = load_data()
-		id = loos[-1][5] + 1
+		id = max_id_plus_plus()
 		arr.append(id)
 		comments = form.get('comments')
 		if comments == None:
@@ -32,7 +32,7 @@ def add_loo():
 		with open("loos.json", 'w') as f:
 			json.dump(loos, f)
 		# Ridirect
-		return redirect("/")
+		return redirect("/map")
 	elif request.method == 'GET':
 		return render_template('addLoo.html')
 
@@ -52,11 +52,11 @@ def report():
 		loos = load_data()
 		for loo in loos:
 			if loo[5] == id:
-				# Create string to append
-				report = f"Object: {loo}\n\nComments: {request.form.get('comments')}\n---------------\n\n\n"
-				# append reports to reports
-				with open('static/reports.txt',"a") as f:
-					f.write(report)
+				with open('reports.json', 'r') as f:
+					reports = json.load(f)
+				reports.append({"comments" : request.form.get('comments'), 'entry' : loo})
+				with open('reports.json',"w") as f:
+					json.dump(reports, f)
 				break
 
 		return redirect("/map")
@@ -79,6 +79,27 @@ def rate_loo():
 	
 	return redirect("/map")
 
+@app.route("/reports", methods=["GET", "POST"])
+def get_reports():
+	if request.method == "POST":
+		form = request.form
+		id = int(form.get('id'))
+		reports = load_json('reports.json')
+		if form.get('action') == 'keep':
+			comments = form.get('comments')
+			
+			i = 0;
+			for report in reports:
+				if report['entry'][5] == id and report['comments'] == comments:
+					break
+				i += 1
+			del report[i]
+		with open('reports.json', 'w') as f:
+			json.dump(reports, f)
+	return render_template('reports.html', reports=load_json('reports.json'))
+
+
+
 # Loads loos, returns dict
 def load_data():
 	with open('loos.json', 'r') as f:
@@ -87,6 +108,19 @@ def load_data():
 def save_json(obj):
 	with open('loos.json', "w") as f:
 		json.dump(obj, f)
+
+def load_json(fp):
+	with open(fp, 'r') as f:
+		return json.load(f)
+
+# Returns and increments the current id
+def max_id_plus_plus():
+	with open('max_id.txt', 'r') as f:
+		id = int(f.read()) + 1
+	with open('max_id.txt', 'w') as f:
+		f.write(str(id))
+	return id
+
 
 def errorhandler(e):
     """Handle error"""

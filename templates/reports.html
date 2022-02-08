@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block main %}
+<script>
+    function updatePasswords(event) {
+        event.preventDefault();
+        password = document.getElementById('password').value;
+        fields = document.querySelectorAll('.pass');
+        for (pass of fields) {
+            pass.value = password;
+        }
+    }
+</script>
+
+<form onsubmit='updatePasswords(event)'>
+    <div class='form-group'>
+        <input type="password" required autofocus class="form-control" id='password'></input>
+    </div>
+    <button type='submit'class='btn btn-primary'>Enter</button>
+</form>
+
+{% for report in reports %}
+<div class="entry-holder">
+    <div class="entry">
+        <br>
+        <h3>{{ report.entry[2] }}</h3>
+        <div class='entry-data'>
+            <p>
+                <b>Comment: </b>{{report.comments}}
+            </p>
+            <p>
+                <b>Location: </b>{{report.entry[0] }} , {{report.entry[1]}}
+            </p>
+            <p>
+                <b>id: </b>{{report.entry[5]}}
+            </p>
+            <p>
+                <b>Rating:</b> {{report.entry[3]}}
+            </p>
+            <p>
+                <b>Number of ratings: </b>{{report.entry[4]}}
+            </p>
+        </div>
+        <form action="/reports" method='post'>
+            <input type="hidden" name='id' value="{{report.entry[5]}}"></input>
+            <input type="hidden" name='action' value="remove"></input>
+            <input type="hidden" name='password'></input>
+            <button type=submit" class="btn btn-outline-danger">Remove Listing</button>
+        </form>
+        <br>
+        <form action="/reports">
+            <input type="hidden" name='id' value="{{report.entry[5]}}"></input>
+            <input type="hidden" name='action' value="keep"></input>
+            <input type="hidden" class='pass' name='password'></input>
+            <input type="hidden" name='comments' value='{{report.comments}}'></input>
+            <button type=submit" class="btn btn-outline-primary">Keep listing</button>
+        </form>
+        <br>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

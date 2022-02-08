@@ -1,0 +1,203 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.590651,
+                    34.962466
+                ]
+            },
+            "properties": {
+                "country_code": "us",
+                "housenumber": "54",
+                "street": "Cypress Point",
+                "country": "United States",
+                "county": "Mohave County",
+                "datasource": {
+                    "sourcename": "openaddresses",
+                    "attribution": "© OpenAddresses contributors",
+                    "license": "BSD-3-Clause License"
+                },
+                "postcode": "86440",
+                "state": "Arizona",
+                "city": "Mohave Valley",
+                "lon": -114.590651,
+                "lat": 34.962466,
+                "state_code": "AZ",
+                "formatted": "54 Cypress Point, Mohave Valley, AZ 86440, United States of America",
+                "address_line1": "54 Cypress Point",
+                "address_line2": "Mohave Valley, AZ 86440, United States of America",
+                "result_type": "building",
+                "rank": {
+                    "popularity": 1.1314124992552619,
+                    "confidence": 0.6876190476190476,
+                    "confidence_city_level": 0.95,
+                    "confidence_street_level": 0.9025,
+                    "match_type": "full_match"
+                },
+                "place_id": "516116da39cda55cc05987c1fc15327b4140c00203"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -71.291787,
+                    41.926262
+                ]
+            },
+            "properties": {
+                "country_code": "us",
+                "housenumber": "54",
+                "street": "Cypress Road",
+                "country": "United States",
+                "county": "Bristol County",
+                "datasource": {
+                    "sourcename": "openaddresses",
+                    "attribution": "© OpenAddresses contributors",
+                    "license": "BSD-3-Clause License"
+                },
+                "postcode": "02703",
+                "state": "Massachusetts",
+                "district": "Attleboro",
+                "city": "Attleboro",
+                "lon": -71.291787,
+                "lat": 41.926262,
+                "state_code": "MA",
+                "formatted": "54 Cypress Road, Attleboro, MA 02703, United States of America",
+                "address_line1": "54 Cypress Road",
+                "address_line2": "Attleboro, MA 02703, United States of America",
+                "result_type": "building",
+                "rank": {
+                    "popularity": 3.296541514846817,
+                    "confidence": 0.475,
+                    "match_type": "full_match"
+                },
+                "place_id": "51789961a3acd251c05987c3d2c08ff64440c00203"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.88182,
+                    26.666498
+                ]
+            },
+            "properties": {
+                "country_code": "us",
+                "housenumber": "54",
+                "street": "Cypress Street",
+                "country": "United States",
+                "county": "Lee County",
+                "datasource": {
+                    "sourcename": "openaddresses",
+                    "attribution": "© OpenAddresses contributors",
+                    "license": "BSD-3-Clause License"
+                },
+                "postcode": "33903",
+                "state": "Florida",
+                "city": "North Fort Myers",
+                "lon": -81.88182,
+                "lat": 26.666498,
+                "state_code": "FL",
+                "formatted": "54 Cypress Street, North Fort Myers, FL 33903, United States of America",
+                "address_line1": "54 Cypress Street",
+                "address_line2": "North Fort Myers, FL 33903, United States of America",
+                "result_type": "building",
+                "rank": {
+                    "popularity": 3.3278514551891405,
+                    "confidence": 0.475,
+                    "match_type": "full_match"
+                },
+                "place_id": "515c3d27bd6f7854c05973d9e89c9faa3a40c00203"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    153.426896,
+                    -29.114278
+                ]
+            },
+            "properties": {
+                "country_code": "au",
+                "housenumber": "54",
+                "street": "Cypress Street",
+                "country": "Australia",
+                "county": "Richmond Valley",
+                "datasource": {
+                    "sourcename": "openaddresses",
+                    "attribution": "© OpenAddresses contributors",
+                    "license": "BSD-3-Clause License"
+                },
+                "postcode": "2473",
+                "state": "New South Wales",
+                "district": "Evans Head",
+                "city": "Evans Head",
+                "lon": 153.426896,
+                "lat": -29.114278,
+                "state_code": "NSW",
+                "formatted": "54 Cypress Street, Evans Head NSW 2473, Australia",
+                "address_line1": "54 Cypress Street",
+                "address_line2": "Evans Head NSW 2473, Australia",
+                "result_type": "building",
+                "rank": {
+                    "popularity": 0.4437568764070715,
+                    "confidence": 0.6876190476190476,
+                    "confidence_city_level": 0.95,
+                    "confidence_street_level": 0.9025,
+                    "match_type": "full_match"
+                },
+                "place_id": "5162d9cc21a92d634059fca6b052411d3dc0c00203"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.401657,
+                    35.153972
+                ]
+            },
+            "properties": {
+                "country_code": "us",
+                "housenumber": "54",
+                "street": "Cypress Circle",
+                "country": "United States",
+                "county": "Moore County",
+                "datasource": {
+                    "sourcename": "openaddresses",
+                    "attribution": "© OpenAddresses contributors",
+                    "license": "BSD-3-Clause License"
+                },
+                "state": "North Carolina",
+                "city": "Southern Pines",
+                "lon": -79.401657,
+                "lat": 35.153972,
+                "state_code": "NC",
+                "formatted": "54 Cypress Circle, Southern Pines, NC, United States of America",
+                "address_line1": "54 Cypress Circle",
+                "address_line2": "Southern Pines, NC, United States of America",
+                "result_type": "building",
+                "rank": {
+                    "popularity": 1.7615843337467652,
+                    "confidence": 0.475,
+                    "match_type": "full_match"
+                },
+                "place_id": "5168cd8fbfb4d953c059f73fc05ab5934140c00203"
+            }
+        }
+    ],
+    "query": {
+        "text": "54 cypress, mill valley"
+    }
+}

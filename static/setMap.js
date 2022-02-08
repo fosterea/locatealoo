@@ -175,7 +175,7 @@ navigator.geolocation.getCurrentPosition((position) => {
 
 function addSpot(x,z,name,rating, id, comments) {
 var marker = L.marker([x,z]).addTo(map);
-marker.bindPopup("<b>"+name+"</b><br>Rating: "+rating+"<br><a href=\"/reporting?id=" + id + "\"><small><small>report listing</small></small></a> | <button class=\"open-button\" onclick=\"openForm()\"><small><small>Leave rating</small></small></button><div class=\"form-popup\" id=\"myForm\" style=\"display :none;\"><br><form action=\"/rateloo\" method = \"post\"  class=\"form-container\" style=\"text-align: center; \"> <div class=\'rate-form-group\'><label for=\"rating\"><b>Rating</b></label> <input type=\"number\" name=\"rating\" min = \"1\" max = \"10\" required></div><div class=\'rate-form-group\'><button type=\"submit\" class=\"btn btn-outline-dark\" style=\"padding: 1.5px 4px;\">Enter</button></div><padding> </padding><div class=\'rate-form-group\'> <button type=\"button\" class=\"btn cancel\" onclick=\"closeForm()\">Cancel</button></div> <input type = \"hidden\" name=\"id\" value=\"" + id + "\"></input></form> </div>")
+marker.bindPopup("<b>"+name+"</b><br>Rating: "+rating+"<br><a href=\"https://www.google.com/maps/search/?api=1&query=" + x + "," + z + "\" target=\"_blank\">google maps</a><br><a href=\"/reporting?id=" + id + "\"><small><small>report listing</small></small></a> | <button class=\"open-button\" onclick=\"openForm()\"><small><small>Leave rating</small></small></button><div class=\"form-popup\" id=\"myForm\" style=\"display :none;\"><br><form action=\"/rateloo\" method = \"post\"  class=\"form-container\" style=\"text-align: center; \"> <div class=\'rate-form-group\'><label for=\"rating\"><b>Rating</b></label> <input type=\"number\" name=\"rating\" min = \"1\" max = \"10\" required></div><div class=\'rate-form-group\'><button type=\"submit\" class=\"btn btn-outline-dark\" style=\"padding: 1.5px 4px;\">Enter</button></div><padding> </padding><div class=\'rate-form-group\'> <button type=\"button\" class=\"btn cancel\" onclick=\"closeForm()\">Cancel</button></div> <input type = \"hidden\" name=\"id\" value=\"" + id + "\"></input></form> </div>")
 }
 
 
@@ -193,7 +193,7 @@ function addImportedSpot(x,z,name) {
 
   var marker = L.marker([x,z],{icon: storeIcon}).addTo(map);
 
-  marker.bindPopup("<b>"+name+"</b><br>Imported location");
+  marker.bindPopup("<b>"+name+"</b><br><a href=\"https://www.google.com/maps/search/?api=1&query=" + x + "," + z + "\" target=\"_blank\">google maps</a>");
 }
 
 

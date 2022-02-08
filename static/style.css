@@ -41,3 +41,22 @@ padding {
 	size: 10px;
 	padding: 1rem;
 }
+
+.entry {
+	background-color: rgb(210, 224, 241);
+	border: 1px solid;
+	border-radius: 25px;
+	justify-content: center;
+}
+
+.entry-holder {
+	padding-top: 3rem;
+	padding-left: min(20%, 200px);
+	padding-right: min(20%, 200px);
+}
+
+.entry-data {
+	width: min(500px, 90%);
+	text-align: left;
+	margin: auto;
+}
