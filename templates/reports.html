@@ -2,22 +2,24 @@
 
 {% block main %}
 <script>
-    function updatePasswords(event) {
-        event.preventDefault();
-        password = document.getElementById('password').value;
-        fields = document.querySelectorAll('.pass');
-        for (pass of fields) {
-            pass.value = password;
-        }
-    }
+    document.addEventListener('DOMContentLoaded', function (event) {
+        document.getElementById('password').addEventListener('keyup', function (event) {
+            pass = document.getElementById('password').value;
+            password = document.getElementById('password').value;
+            fields = document.querySelectorAll('.pass');
+            for (pass of fields) {
+                pass.value = password;
+            }
+            });
+    });
 </script>
+<br>
 
-<form onsubmit='updatePasswords(event)'>
-    <div class='form-group'>
-        <input type="password" required autofocus class="form-control" id='password'></input>
-    </div>
-    <button type='submit'class='btn btn-primary'>Enter</button>
-</form>
+<div class='form-group'>
+    <input type="password" placeholder="password" required autofocus class="form-control" id='password'></input>
+</div>
+
+
 
 {% for report in reports %}
 <div class="entry-holder">
@@ -44,11 +46,11 @@
         <form action="/reports" method='post'>
             <input type="hidden" name='id' value="{{report.entry[5]}}"></input>
             <input type="hidden" name='action' value="remove"></input>
-            <input type="hidden" name='password'></input>
+            <input type="hidden" class='pass' name='password'></input>
             <button type=submit" class="btn btn-outline-danger">Remove Listing</button>
         </form>
         <br>
-        <form action="/reports">
+        <form action="/reports" method='post'>
             <input type="hidden" name='id' value="{{report.entry[5]}}"></input>
             <input type="hidden" name='action' value="keep"></input>
             <input type="hidden" class='pass' name='password'></input>

@@ -4,6 +4,8 @@ import json
 
 app = Flask(__name__)
 
+PASSWORD = 'del'
+
 # Index 
 @app.route('/')
 def index():
@@ -81,7 +83,23 @@ def rate_loo():
 
 @app.route("/reports", methods=["GET", "POST"])
 def get_reports():
-	if request.method == "POST":
+	def remove_all_reports(id, reports):
+		del_list = []
+		for i in range(len(reports)):
+			if reports[i]['entry'][5] == id:
+				del_list.append(i)
+		for index in reversed(del_list):
+			del reports[index]
+				
+	def remove_loo(id):
+		loos = load_data()
+		for i in range(len(loos)):
+			if loos[i][5] == id:
+				del loos[i]
+				break
+		save_json(loos)
+
+	if request.method == "POST" and request.form.get('password') == PASSWORD:
 		form = request.form
 		id = int(form.get('id'))
 		reports = load_json('reports.json')
@@ -93,7 +111,10 @@ def get_reports():
 				if report['entry'][5] == id and report['comments'] == comments:
 					break
 				i += 1
-			del report[i]
+			del reports[i]
+		elif form.get('action') == 'remove':
+			remove_all_reports(id=id, reports=reports)
+			remove_loo(id=id)
 		with open('reports.json', 'w') as f:
 			json.dump(reports, f)
 	return render_template('reports.html', reports=load_json('reports.json'))
