@@ -1,25 +1,15 @@
-Flask is a minimal Python framework that helps you create a web server. 
+<div>
+  <h2>What it does</h2>
 
-Let's take a look at the code we have:
+<p>It's a map of restrooms that any user can add to. Users are also able to rate or report other listings. On top of having user-added restrooms on the map, the site displays chains like Starbucks automatically because all Starbucks have an open bathroom policy.</p>
 
-```python
-from flask import Flask
+<h2>What's next for Locate a Loo</h2>
 
-app = Flask(__name__)
+<p>We will add more chains with open-bathroom policies. And we need more users to help add bathrooms around their town.</p>
 
-@app.route("/")
-def hello_world():
-    return "<h1>Hello, World!</h1>"
-```
-	
-What did that code do?
+<h2>Additional info:</h2>
 
-First we `import` the `Flask` class. An instance of this class will be our WSGI application.
+<p>Now, instead of different colored markers to represent locations that are not added by users, the company logo is displayed.
+It wasn't demonstrated in the video, but the "leave rating" function works by making a small form pop up and allowing the user to enter a number. The number is averaged with the rest of the ratings and displayed as the new rating. </p>
 
-Next we create an instance of this class. The first argument is the name of the application’s module or package. `__name__` is a convenient shortcut for this that is appropriate for most cases. This is needed so that Flask knows where to look for resources such as templates and static files.
-
-We then use the `route()` decorator to tell Flask what URL should trigger our function. In this case we use `/` routh, which is the default route of any website.
-
-The function returns the message we want to display in the user’s browser. The default content type is HTML, so HTML in the string will be rendered by the browser.
-
-To learn more, checkout the [official guide](https://flask.palletsprojects.com/en/2.0.x/quickstart/).
+</div>
