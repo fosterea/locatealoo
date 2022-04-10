@@ -12,4 +12,10 @@
 <p>Now, instead of different colored markers to represent locations that are not added by users, the company logo is displayed.
 It wasn't demonstrated in the video, but the "leave rating" function works by making a small form pop up and allowing the user to enter a number. The number is averaged with the rest of the ratings and displayed as the new rating. </p>
 
+<h2>Additional info:</h2>
+
+<p>
+  Link: <a href="http://locate-a-loo.herokuapp.com/">http://locate-a-loo.herokuapp.com/</a>
+</p>
+
 </div>
